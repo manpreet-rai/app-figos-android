@@ -5,7 +5,7 @@ Contains source code for Android App - Figos
 
 This repository contains source code for my client's android app [Figos](https://play.google.com/store/apps/details?id=in.figos.app).
 
-![image](https://github.com/manpreet-rai/app-figos-android/assets/149692162/cbe3355e-4575-4838-80cd-f443e96a64c7)
+![image](https://raw.githubusercontent.com/manpreet-rai/v1-manpreetrai-ca/main/public/samples/figos.png)
 
 ## Technologies Used:
  - Android Studio
