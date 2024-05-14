@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorDark"
+    android:animateLayoutChanges="true"
+    tools:context=".AboutActivity">
+
+    <RelativeLayout
+        android:id="@+id/about_appBar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/colorMildDark">
+
+        <ImageButton
+            android:id="@+id/about_backBtn"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_back"
+            android:background="@null"
+            android:tint="@color/color_back_button_bw"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/about_appName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/details"
+            android:fontFamily="@font/blinker_bold"
+            android:textColor="@color/colorLight"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/about_backBtn"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/about_appBar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/about_aboutUsBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/aboutUs"
+                android:textSize="22sp"
+                android:fontFamily="@font/blinker_bold"
+                android:textColor="@color/colorLight"
+                android:background="@drawable/gfx_bg_accent_about"
+                android:padding="16dp"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/about_ourLocationsBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/ourLocations"
+                android:textSize="22sp"
+                android:fontFamily="@font/blinker_bold"
+                android:textColor="@color/colorLight"
+                android:background="@drawable/gfx_bg_accent_about"
+                android:padding="16dp"
+                android:layout_below="@+id/about_aboutUsBtn"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/about_franchiseBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/beOurPartner"
+                android:textSize="22sp"
+                android:fontFamily="@font/blinker_bold"
+                android:textColor="@color/colorLight"
+                android:background="@drawable/gfx_bg_accent_about"
+                android:padding="16dp"
+                android:layout_below="@+id/about_ourLocationsBtn"
+                android:textAllCaps="false"/>
+
+            <RelativeLayout
+                android:id="@+id/about_aboutUsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_below="@+id/about_franchiseBtn">
+
+                <TextView
+                    android:id="@+id/about_aboutUsHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/aboutUsAndFood"
+                    android:textColor="@color/colorAmber"
+                    android:fontFamily="@font/blinker_semibold"
+                    android:textAlignment="center"
+                    android:textSize="22sp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp" />
+
+                <TextView
+                    android:id="@+id/about_aboutUsHighlight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/aboutUsHeading"
+                    android:textColor="@color/colorLight"
+                    android:fontFamily="@font/blinker_semibold"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_below="@+id/about_aboutUsHeading"/>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/about_aboutUsCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="0dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_below="@+id/about_aboutUsHighlight"
+                    app:cardCornerRadius="16sp">
+
+                    <ImageView
+                        android:id="@+id/home_specialOfferImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:src="@drawable/about_us"
+                        android:scaleType="centerCrop"
+                        android:layout_alignParentTop="true"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/dailyOfferImage" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/about_aboutUsPara"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/aboutUsPara"
+                    android:textColor="@color/colorMildLight"
+                    android:fontFamily="@font/blinker_semibold"
+                    android:textAlignment="textStart"
+                    android:textSize="18sp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_below="@+id/about_aboutUsCard"
+                    android:padding="8dp" />
+
+                <ImageView
+                    android:id="@+id/about_aboutSign"
+                    android:layout_width="match_parent"
+                    android:layout_height="28dp"
+                    android:src="@drawable/ic_sign_hardeep"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_below="@+id/about_aboutUsPara"/>
+
+                <Button
+                    android:id="@+id/about_figosBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/about_aboutSign"
+                    android:padding="12sp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="32dp"
+                    android:text="@string/readMore"
+                    android:fontFamily="@font/blinker_semibold"
+                    android:textColor="@color/colorLight"
+                    android:background="@drawable/gfx_bg_green"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/about_ourLocationsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:visibility="gone"
+                android:layout_below="@+id/about_franchiseBtn">
+
+                <TextView
+                    android:id="@+id/about_ourLocationsHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ourLocations"
+                    android:textColor="@color/colorAmber"
+                    android:fontFamily="@font/blinker_semibold"
+                    android:textAlignment="center"
+                    android:textSize="22sp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp" />
+
+                <TextView
+                    android:id="@+id/about_gorayaFranchiseHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/goraya"
+                    android:textColor="@color/colorLight"
+                    android:fontFamily="@font/blinker_semibold"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_below="@+id/about_ourLocationsHeading"/>
+
+                <TextView
+                    android:id="@+id/about_gorayaFranchise"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gorayaLocation"
+                    android:textColor="@color/colorMildLight"
+                    android:fontFamily="@font/blinker_semibold"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_below="@+id/about_gorayaFranchiseHeading"
+                    android:padding="8dp" />
+
+                <Button
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
+                    android:id="@+id/about_openGorayaLocationBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/about_gorayaFranchise"
+                    android:padding="12sp"
+                    android:text="@string/openInMaps"
+                    android:fontFamily="@font/blinker_semibold"
+                    android:textColor="@color/colorLight"
+                    android:background="@drawable/gfx_bg_cyan"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/about_nakodarFranchiseHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nakodar"
+                    android:textColor="@color/colorLight"
+                    android:fontFamily="@font/blinker_semibold"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_below="@+id/about_openGorayaLocationBtn"/>
+
+                <TextView
+                    android:id="@+id/about_nakodarFranchise"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nakodarLocation"
+                    android:textColor="@color/colorMildLight"
+                    android:fontFamily="@font/blinker_semibold"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_below="@+id/about_nakodarFranchiseHeading"
+                    android:padding="8dp" />
+
+                <Button
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
+                    android:id="@+id/about_openNakodarLocationBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/about_nakodarFranchise"
+                    android:padding="12sp"
+                    android:text="@string/openInMaps"
+                    android:fontFamily="@font/blinker_semibold"
+                    android:textColor="@color/colorLight"
+                    android:background="@drawable/gfx_bg_cyan"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/about_phagwaraFranchiseHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/phagwara"
+                    android:textColor="@color/colorLight"
+                    android:fontFamily="@font/blinker_semibold"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_below="@+id/about_openNakodarLocationBtn"/>
+
+                <TextView
+                    android:id="@+id/about_phagwaraFranchise"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/phagwaraLocation"
+                    android:textColor="@color/colorMildLight"
+                    android:fontFamily="@font/blinker_semibold"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_below="@+id/about_phagwaraFranchiseHeading"
+                    android:padding="8dp" />
+
+                <TextView
+                    android:id="@+id/about_nurmahalFranchiseHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nurmahal"
+                    android:textColor="@color/colorLight"
+                    android:fontFamily="@font/blinker_semibold"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_below="@+id/about_phagwaraFranchise"/>
+
+                <TextView
+                    android:id="@+id/about_nurmahalFranchise"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nurmahalLocation"
+                    android:textColor="@color/colorMildLight"
+                    android:fontFamily="@font/blinker_semibold"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_below="@+id/about_nurmahalFranchiseHeading"
+                    android:padding="8dp" />
+
+                <TextView
+                    android:id="@+id/about_jalandharFranchiseHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/jalandhar"
+                    android:textColor="@color/colorLight"
+                    android:fontFamily="@font/blinker_semibold"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_below="@+id/about_nurmahalFranchise"/>
+
+                <TextView
+                    android:id="@+id/about_jalandharFranchise"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/jalandharLocation"
+                    android:textColor="@color/colorMildLight"
+                    android:fontFamily="@font/blinker_semibold"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="32dp"
+                    android:layout_below="@+id/about_jalandharFranchiseHeading"
+                    android:padding="8dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/about_franchiseLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="16dp"
+                android:layout_below="@+id/about_franchiseBtn">
+
+                <TextView
+                    android:id="@+id/about_franchiseHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/partnerWithUs"
+                    android:textColor="@color/colorAmber"
+                    android:fontFamily="@font/blinker_semibold"
+                    android:textAlignment="center"
+                    android:textSize="22sp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp" />
+
+                <TextView
+                    android:id="@+id/about_franchiseHighlight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/franchiseHeading"
+                    android:textColor="@color/colorLight"
+                    android:fontFamily="@font/blinker_semibold"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_below="@+id/about_franchiseHeading"/>
+
+                <ImageView
+                    android:id="@+id/home_franchiseImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@drawable/store"
+                    android:scaleType="fitCenter"
+                    android:layout_marginTop="16dp"
+                    android:adjustViewBounds="true"
+                    android:layout_below="@+id/about_franchiseHighlight"
+                    android:contentDescription="@string/dailyOfferImage" />
+
+                <TextView
+                    android:id="@+id/about_franchisePara"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/franchisePara"
+                    android:textColor="@color/colorMildLight"
+                    android:fontFamily="@font/blinker_semibold"
+                    android:textAlignment="textStart"
+                    android:textSize="18sp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_below="@+id/home_franchiseImage"
+                    android:padding="8dp" />
+
+                <TextView
+                    android:id="@+id/about_franchiseOffer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/franchiseOffer"
+                    android:textColor="@color/colorLight"
+                    android:fontFamily="@font/blinker_semibold"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_below="@+id/about_franchisePara"/>
+
+                <Button
+                    android:id="@+id/about_involveBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/about_franchiseOffer"
+                    android:padding="12sp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="32dp"
+                    android:text="@string/franchiseInvolve"
+                    android:fontFamily="@font/blinker_semibold"
+                    android:textColor="@color/colorLight"
+                    android:background="@drawable/gfx_bg_green"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"/>
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/register_parentRV"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gfx_back"
+    tools:context="in.figos.app.RegisterActivity">
+
+    <ImageView
+        android:id="@+id/register_headerGfx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/gfx_login_red"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"/>
+
+    <ImageView
+        android:id="@+id/register_logoGfx"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/logo"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:layout_marginTop="16dp"
+        android:layout_alignTop="@id/register_headerGfx"
+        android:layout_alignBottom="@id/register_headerGfx"
+        android:layout_centerHorizontal="true"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:layout_below="@id/register_headerGfx">
+
+        <TextView
+            android:id="@+id/register_registerPageTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/login"
+            android:fontFamily="@font/blinker_bold"
+            android:textColor="@color/colorLight"
+            android:textAlignment="center"
+            android:textSize="28sp"/>
+
+        <EditText
+            android:id="@+id/register_phoneET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginTop="36dp"
+            android:layout_below="@+id/register_registerPageTV"
+            android:hint="@string/phoneFull"
+            android:textSize="18sp"
+            android:fontFamily="@font/blinker_semibold"
+            android:textColor="@color/color_choice_field"
+            android:textColorHint="@color/colorMildLight"
+            android:background="@drawable/gfx_bg_edittext"
+            android:alpha="0.85"
+            android:padding="16sp"
+            android:inputType="phone"/>
+
+        <Button
+            android:id="@+id/register_proceedBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_below="@id/register_phoneET"
+            android:text="@string/proceed"
+            android:textSize="22sp"
+            android:fontFamily="@font/blinker_bold"
+            android:textColor="@color/colorLight"
+            android:background="@drawable/gfx_bg_accentbtn"
+            android:padding="16dp"
+            android:enabled="false"
+            android:textAllCaps="false"/>
+
+        <EditText
+            android:id="@+id/register_otpET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_below="@+id/register_phoneET"
+            android:hint="@string/enterOTP"
+            android:textSize="18sp"
+            android:fontFamily="@font/blinker_semibold"
+            android:textColor="@color/colorLight"
+            android:textColorHint="@color/colorMildLight"
+            android:background="@drawable/gfx_bg_edittext"
+            android:alpha="0.85"
+            android:padding="16sp"
+            android:visibility="gone"
+            android:inputType="numberPassword"/>
+
+        <Button
+            android:id="@+id/register_registerBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginTop="36dp"
+            android:layout_below="@id/register_otpET"
+            android:text="@string/login"
+            android:textSize="22sp"
+            android:fontFamily="@font/blinker_semibold"
+            android:textColor="@color/colorLight"
+            android:background="@drawable/gfx_bg_accentbtn"
+            android:padding="16dp"
+            android:visibility="gone"
+            android:textAllCaps="false"/>
+
+        <Button
+            android:id="@+id/register_resendOTPBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/resendOTP"
+            android:textSize="20sp"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/blinker_bold"
+            android:background="@null"
+            android:textColor="@color/color_text_button"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:textAllCaps="false"
+            android:visibility="gone"
+            android:layout_below="@+id/register_registerBtn"/>
+
+        <Button
+            android:id="@+id/register_loginBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_up"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:textSize="20sp"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/blinker_bold"
+            android:background="@null"
+            android:textColor="@color/color_text_button"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:textAllCaps="false"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/register_notificationMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/email_exists_message"
+        android:textSize="14sp"
+        android:textAlignment="center"
+        android:textColor="@color/colorLight"
+        android:background="@drawable/gfx_bg_banner"
+        android:padding="10sp"
+        android:visibility="gone"/>
+
+    <RelativeLayout
+        android:id="@+id/register_progressBarLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone">
+
+        <View
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@drawable/gfx_bg_progress"
+            android:alpha="0.8"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <ProgressBar
+                android:id="@+id/register_progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:indeterminate="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/loading_please_wait"
+                android:textSize="16sp"
+                android:fontFamily="@font/blinker_semibold"
+                android:textColor="@color/colorAccent"
+                android:layout_below="@id/register_progressBar"
+                android:layout_marginTop="48dp"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimaryLight">#D7EFE0</color>
+    <color name="colorPrimary">#DE212A</color>
+    <color name="colorPrimaryDark">#991B1B</color>
+    <color name="colorAccent">#991B1B</color>
+    <color name="colorAccentDark">#124E2A</color>
+
+    <!-- Theme -->
+    <color name="colorMildLight">#78716C</color>
+    <color name="colorDarkLight">#4E4A46</color>
+    <color name="colorLight">#FAFAF9</color>
+    <color name="colorDark">#2A2D32</color>
+    <color name="colorDarker">#1F2225</color>
+    <color name="colorMildDark">#34373C</color>
+    <color name="colorRed">#DE212A</color>
+    <color name="colorDarkRed">#991B1B</color>
+    <color name="colorDarkerRed">#7F1D1D</color>
+    <color name="colorDarkestRed">#5A1515</color>
+    <color name="colorCyan">#159687</color>
+    <color name="colorCyanDark">#155E75</color>
+    <color name="colorCyanDarker">#164E63</color>
+    <color name="colorAmber">#F59E0B</color>
+    <color name="colorAmberDark">#D97706</color>
+    <color name="colorAmberDarker">#B45309</color>
+    <color name="colorGreen">#16A34A</color>
+    <color name="colorGreenDark">#15803D</color>
+    <color name="colorGreenDarker">#14532D</color>
+
+</resources>

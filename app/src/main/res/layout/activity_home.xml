@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="in.figos.app.HomeActivity"
+    android:animateLayoutChanges="true"
+    android:background="@color/colorDark">
+
+    <RelativeLayout
+        android:id="@+id/home_appBar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/colorMildDark">
+
+        <ImageView
+            android:id="@+id/home_appLogo"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/logo"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:layout_marginStart="16dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/home_appName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/app_name"
+            android:fontFamily="@font/blinker_bold"
+            android:textColor="@color/colorLight"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/home_appLogo"/>
+
+        <ImageButton
+            android:id="@+id/home_profileBtn"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_account"
+            android:background="@drawable/gfx_bg_back_round"
+            android:tint="@color/color_back_button"
+            android:layout_toStartOf="@+id/home_menuBtn"
+            android:layout_centerVertical="true"/>
+
+        <ImageButton
+            android:id="@+id/home_menuBtn"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_menu"
+            android:background="@drawable/gfx_bg_back_flat"
+            android:tint="@color/color_back_button"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/home_notificationLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/home_appBar"
+        android:text="@string/refreshing"
+        android:textColor="@color/colorLight"
+        android:background="@color/colorCyan"
+        android:fontFamily="@font/blinker_semibold"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:padding="8dp"
+        android:visibility="gone"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/home_notificationLabel">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/home_dailyOfferLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gfx_bg_section"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:layout_alignParentTop="true">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/home_dailyOfferCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="0dp"
+                    app:cardCornerRadius="16sp">
+
+                    <ImageView
+                        android:id="@+id/home_dailyOfferImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/default_offer"
+                        android:scaleType="fitXY"
+                        android:layout_alignParentTop="true"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/dailyOfferImage" />
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:id="@+id/home_orderBtnsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:layout_below="@+id/home_dailyOfferCV">
+
+                    <Button
+                        android:id="@+id/home_callNowBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="4dp"
+                        android:text="@string/callNow"
+                        android:fontFamily="@font/blinker_semibold"
+                        android:textColor="@color/colorLight"
+                        android:background="@drawable/gfx_bg_green"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"/>
+
+                    <Button
+                        android:id="@+id/home_orderOnlineBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="4dp"
+                        android:text="@string/orderOnline"
+                        android:fontFamily="@font/blinker_semibold"
+                        android:textColor="@color/colorDark"
+                        android:background="@drawable/gfx_bg_amber"
+                        android:textSize="18sp"
+                        android:textAllCaps="false"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/home_specialOfferLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gfx_bg_section"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:layout_below="@+id/home_dailyOfferLayout"
+                android:visibility="gone">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/home_specialOfferCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="0dp"
+                    app:cardCornerRadius="16sp">
+
+                    <ImageView
+                        android:id="@+id/home_specialOfferImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/default_offer"
+                        android:scaleType="fitXY"
+                        android:layout_alignParentTop="true"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/dailyOfferImage" />
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:id="@+id/home_specialOrderBtnsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:layout_below="@+id/home_specialOfferCV">
+
+                    <Button
+                        android:id="@+id/home_specialCallNowBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="4dp"
+                        android:text="@string/callNow"
+                        android:fontFamily="@font/blinker_semibold"
+                        android:textColor="@color/colorLight"
+                        android:background="@drawable/gfx_bg_green"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"/>
+
+                    <Button
+                        android:id="@+id/home_specialOrderOnlineBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="4dp"
+                        android:text="@string/orderOnline"
+                        android:fontFamily="@font/blinker_semibold"
+                        android:textColor="@color/colorDark"
+                        android:background="@drawable/gfx_bg_amber"
+                        android:textSize="18sp"
+                        android:textAllCaps="false"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/home_partnerLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/home_specialOfferLayout"
+                android:text="@string/partner"
+                android:textColor="@color/colorMildLight"
+                android:fontFamily="@font/blinker_semibold"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"
+                android:padding="8dp" />
+
+            <Button
+                android:id="@+id/home_aboutUsBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/aboutUs"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:textSize="20sp"
+                android:layout_below="@+id/home_partnerLabel"
+                android:fontFamily="@font/blinker_bold"
+                android:background="@null"
+                android:textColor="@color/color_text_button"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:textAllCaps="false"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/home_personalInfoSV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorDark"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/home_messageTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:fontFamily="@font/blinker_semibold"
+                android:textColor="@color/colorAmber"
+                android:text="@string/personalizationMessage"
+                android:textAlignment="textStart"
+                android:layout_marginTop="64dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"/>
+
+            <RelativeLayout
+                android:id="@+id/home_personalSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gfx_bg_section"
+                android:layout_margin="16dp"
+                android:padding="8dp"
+                android:layout_below="@+id/home_messageTV">
+
+                <TextView
+                    android:id="@+id/home_nameTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/name"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/blinker_bold"
+                    android:textColor="@color/colorMildLight" />
+
+                <EditText
+                    android:id="@+id/home_nameET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/home_nameTV"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:hint="@string/fullNname"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/blinker_semibold"
+                    android:textColor="@color/colorLight"
+                    android:textColorHint="@color/colorMildLight"
+                    android:background="@drawable/gfx_bg_edittext"
+                    android:padding="16sp"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:id="@+id/home_emailTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/home_nameET"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/email"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/blinker_bold"
+                    android:textColor="@color/colorMildLight" />
+
+                <EditText
+                    android:id="@+id/home_emailET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/home_emailTV"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:hint="@string/emailAddress"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/blinker_semibold"
+                    android:textColor="@color/colorLight"
+                    android:textColorHint="@color/colorMildLight"
+                    android:background="@drawable/gfx_bg_edittext"
+                    android:padding="16sp"
+                    android:inputType="textEmailAddress" />
+
+                <TextView
+                    android:id="@+id/home_dobTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/dob"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/blinker_bold"
+                    android:textColor="@color/colorMildLight"
+                    android:layout_below="@+id/home_emailET"/>
+
+                <EditText
+                    android:id="@+id/home_dobET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/home_dobTV"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:hint="@string/dobFormat"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/blinker_semibold"
+                    android:textColor="@color/colorLight"
+                    android:textColorHint="@color/colorMildLight"
+                    android:background="@drawable/gfx_bg_edittext"
+                    android:padding="16sp"
+                    android:inputType="date" />
+
+                <TextView
+                    android:id="@+id/home_genderTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/gender"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/blinker_bold"
+                    android:textColor="@color/colorMildLight"
+                    android:layout_below="@+id/home_dobET"/>
+
+                <LinearLayout
+                    android:id="@+id/home_genderBtnsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_below="@+id/home_genderTV">
+
+                    <Button
+                        android:id="@+id/home_maleGenderBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/male"
+                        android:fontFamily="@font/blinker_semibold"
+                        android:textColor="@color/colorLight"
+                        android:background="@drawable/gfx_bg_amber_choice"
+                        android:layout_margin="8dp"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"/>
+
+                    <Button
+                        android:id="@+id/home_femaleGenderBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/female"
+                        android:fontFamily="@font/blinker_semibold"
+                        android:textColor="@color/colorLight"
+                        android:background="@drawable/gfx_bg_amber_choice"
+                        android:layout_margin="8dp"
+                        android:textSize="18sp"
+                        android:textAllCaps="false"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/home_dietTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/diet"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/blinker_bold"
+                    android:textColor="@color/colorMildLight"
+                    android:layout_below="@+id/home_genderBtnsLayout"/>
+
+                <LinearLayout
+                    android:id="@+id/home_dietBtnsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_below="@+id/home_dietTV">
+
+                    <Button
+                        android:id="@+id/home_vegDietBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/veg"
+                        android:fontFamily="@font/blinker_semibold"
+                        android:textColor="@color/colorLight"
+                        android:background="@drawable/gfx_bg_amber_choice"
+                        android:layout_margin="8dp"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"/>
+
+                    <Button
+                        android:id="@+id/home_nonVegDietBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/nonVeg"
+                        android:fontFamily="@font/blinker_semibold"
+                        android:textColor="@color/colorLight"
+                        android:background="@drawable/gfx_bg_amber_choice"
+                        android:layout_margin="8dp"
+                        android:textSize="18sp"
+                        android:textAllCaps="false"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/home_locationTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/location"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/blinker_bold"
+                    android:textColor="@color/colorMildLight"
+                    android:layout_below="@+id/home_dietBtnsLayout"/>
+
+                <LinearLayout
+                    android:id="@+id/home_locationBtnsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_below="@+id/home_locationTV">
+
+                    <Button
+                        android:id="@+id/home_gorayaBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/goraya"
+                        android:fontFamily="@font/blinker_semibold"
+                        android:textColor="@color/colorLight"
+                        android:background="@drawable/gfx_bg_amber_choice"
+                        android:layout_margin="8dp"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"/>
+
+                    <Button
+                        android:id="@+id/home_nakodarBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/nakodar"
+                        android:fontFamily="@font/blinker_semibold"
+                        android:textColor="@color/colorLight"
+                        android:background="@drawable/gfx_bg_amber_choice"
+                        android:layout_margin="8dp"
+                        android:textSize="18sp"
+                        android:textAllCaps="false"/>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/home_savePersonalDetailsBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/proceed"
+                    android:fontFamily="@font/blinker_bold"
+                    android:textColor="@color/colorLight"
+                    android:background="@drawable/gfx_bg_green"
+                    android:layout_margin="8dp"
+                    android:textSize="18sp"
+                    android:textAllCaps="false"
+                    android:layout_below="@+id/home_locationBtnsLayout"/>
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

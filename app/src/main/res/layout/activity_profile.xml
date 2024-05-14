@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorDark"
+    tools:context=".ProfileActivity">
+
+    <RelativeLayout
+        android:id="@+id/profile_appBar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/colorMildDark">
+
+        <ImageButton
+            android:id="@+id/profile_backBtn"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_back"
+            android:background="@null"
+            android:tint="@color/color_back_button_bw"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/profile_appName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/userProfile"
+            android:fontFamily="@font/blinker_bold"
+            android:textColor="@color/colorLight"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/profile_backBtn"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/profile_appBar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/profile_phoneSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gfx_bg_section"
+                android:layout_marginTop="64dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/profile_phoneTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/phone"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/blinker_bold"
+                    android:textColor="@color/colorMildLight"/>
+
+                <EditText
+                    android:id="@+id/profile_phoneET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/profile_phoneTV"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:hint="@string/phone"
+                    android:enabled="false"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/blinker_semibold"
+                    android:textColor="@color/colorMildLight"
+                    android:textColorHint="@color/colorMildLight"
+                    android:background="@drawable/gfx_bg_edittext"
+                    android:padding="16sp"
+                    android:inputType="phone" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/profile_personalSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gfx_bg_section"
+                android:layout_margin="16dp"
+                android:padding="8dp"
+                android:layout_below="@+id/profile_phoneSection">
+
+                <TextView
+                    android:id="@+id/profile_nameTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/name"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/blinker_bold"
+                    android:textColor="@color/colorMildLight" />
+
+                <EditText
+                    android:id="@+id/profile_nameET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/profile_nameTV"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:hint="@string/fullNname"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/blinker_semibold"
+                    android:textColor="@color/colorLight"
+                    android:textColorHint="@color/colorMildLight"
+                    android:background="@drawable/gfx_bg_edittext"
+                    android:padding="16sp"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:id="@+id/profile_emailTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/profile_nameET"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/email"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/blinker_bold"
+                    android:textColor="@color/colorMildLight" />
+
+                <EditText
+                    android:id="@+id/profile_emailET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/profile_emailTV"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:hint="@string/emailAddress"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/blinker_semibold"
+                    android:textColor="@color/colorLight"
+                    android:textColorHint="@color/colorMildLight"
+                    android:background="@drawable/gfx_bg_edittext"
+                    android:padding="16sp"
+                    android:inputType="textEmailAddress" />
+
+                <TextView
+                    android:id="@+id/profile_dobTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/dob"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/blinker_bold"
+                    android:textColor="@color/colorMildLight"
+                    android:layout_below="@+id/profile_emailET"/>
+
+                <EditText
+                    android:id="@+id/profile_dobET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/profile_dobTV"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:hint="@string/dobFormat"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/blinker_semibold"
+                    android:textColor="@color/colorLight"
+                    android:textColorHint="@color/colorMildLight"
+                    android:background="@drawable/gfx_bg_edittext"
+                    android:padding="16sp"
+                    android:inputType="date" />
+
+                <TextView
+                    android:id="@+id/profile_genderTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/gender"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/blinker_bold"
+                    android:textColor="@color/colorMildLight"
+                    android:layout_below="@+id/profile_dobET"/>
+
+                <LinearLayout
+                    android:id="@+id/profile_genderBtnsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_below="@+id/profile_genderTV">
+
+                    <Button
+                        android:id="@+id/profile_maleGenderBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/male"
+                        android:fontFamily="@font/blinker_semibold"
+                        android:textColor="@color/colorLight"
+                        android:background="@drawable/gfx_bg_amber_choice"
+                        android:layout_margin="8dp"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"/>
+
+                    <Button
+                        android:id="@+id/profile_femaleGenderBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/female"
+                        android:fontFamily="@font/blinker_semibold"
+                        android:textColor="@color/colorLight"
+                        android:background="@drawable/gfx_bg_amber_choice"
+                        android:layout_margin="8dp"
+                        android:textSize="18sp"
+                        android:textAllCaps="false"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/profile_dietTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/diet"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/blinker_bold"
+                    android:textColor="@color/colorMildLight"
+                    android:layout_below="@+id/profile_genderBtnsLayout"/>
+
+                <LinearLayout
+                    android:id="@+id/profile_dietBtnsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_below="@+id/profile_dietTV">
+
+                    <Button
+                        android:id="@+id/profile_vegDietBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/veg"
+                        android:fontFamily="@font/blinker_semibold"
+                        android:textColor="@color/colorLight"
+                        android:background="@drawable/gfx_bg_amber_choice"
+                        android:layout_margin="8dp"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"/>
+
+                    <Button
+                        android:id="@+id/profile_nonVegDietBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/nonVeg"
+                        android:fontFamily="@font/blinker_semibold"
+                        android:textColor="@color/colorLight"
+                        android:background="@drawable/gfx_bg_amber_choice"
+                        android:layout_margin="8dp"
+                        android:textSize="18sp"
+                        android:textAllCaps="false"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/profile_locationTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/location"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/blinker_bold"
+                    android:textColor="@color/colorMildLight"
+                    android:layout_below="@+id/profile_dietBtnsLayout"/>
+
+                <LinearLayout
+                    android:id="@+id/profile_locationBtnsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_below="@+id/profile_locationTV">
+
+                    <Button
+                        android:id="@+id/profile_gorayaBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/goraya"
+                        android:fontFamily="@font/blinker_semibold"
+                        android:textColor="@color/colorLight"
+                        android:background="@drawable/gfx_bg_amber_choice"
+                        android:layout_margin="8dp"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"/>
+
+                    <Button
+                        android:id="@+id/profile_nakodarBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/nakodar"
+                        android:fontFamily="@font/blinker_semibold"
+                        android:textColor="@color/colorLight"
+                        android:background="@drawable/gfx_bg_amber_choice"
+                        android:layout_margin="8dp"
+                        android:textSize="18sp"
+                        android:textAllCaps="false"/>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/profile_savePersonalDetailsBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/save"
+                    android:fontFamily="@font/blinker_bold"
+                    android:textColor="@color/colorLight"
+                    android:background="@drawable/gfx_bg_green"
+                    android:layout_margin="8dp"
+                    android:textSize="18sp"
+                    android:textAllCaps="false"
+                    android:layout_below="@+id/profile_locationBtnsLayout"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/profile_cautionBtnSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gfx_bg_section"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="64dp"
+                android:padding="8dp"
+                android:layout_below="@+id/profile_personalSection">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/profile_logoutBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/logout"
+                        android:fontFamily="@font/blinker_bold"
+                        android:textColor="@color/colorDark"
+                        android:background="@drawable/gfx_bg_amber"
+                        android:layout_margin="8dp"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"/>
+
+                    <Button
+                        android:id="@+id/profile_deleteAccountBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/deleteAccount"
+                        android:fontFamily="@font/blinker_bold"
+                        android:textColor="@color/colorLight"
+                        android:background="@drawable/gfx_bg_accentbtn"
+                        android:layout_margin="8dp"
+                        android:textAllCaps="false"
+                        android:textSize="18sp"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
